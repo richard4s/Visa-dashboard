@@ -1,6 +1,6 @@
-import axios from axios;
+import axios from 'axios';
 
-consturl = 'http://localhost/3000/api/posts';
+const url = 'http://localhost:3000/api/posts/';
 
 class PostService {
 
@@ -22,4 +22,18 @@ class PostService {
     }
 
 
+    static insertPost(text) {
+        return axios.post(url, {
+            text
+        })
+    }
+
+
+    static deletePost(id) {
+        return axios.delete(`${url}${id}`);
+    }
+
+
 }
+
+export default PostService;
