@@ -9,8 +9,7 @@
           v-bind:item="post"
           v-bind:index="index"
           v-bind:key="post._id">
-            <!-- {{ `${post.date_created.getDate()}/${post.date_created.getMonth()}/${post.date_created.getFullYear()}` }} -->
-            {{ post.date_created }}
+            {{ `${post.date_created.getDate()}/${post.date_created.getMonth()}/${post.date_created.getFullYear()}` }}
             <ul>
               <li>BusName: {{ post.busName }}</li>
               <li>Phone: {{ post.phone }}</li>
@@ -35,7 +34,9 @@ export default {
   },
   async created() {
     try{
+
       this.posts = await PostService.getPosts();
+      
     } catch(err) {
       this.error = err.message;
     }
@@ -45,18 +46,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  h3 {
+    margin: 40px 0 0;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  a {
+    color: #42b983;
+  }
 </style>

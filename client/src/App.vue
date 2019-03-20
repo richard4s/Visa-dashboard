@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <PostComponent msg="Welcome to Your Vue.js App"/>
+    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+    <Header />
+    <HomeComponent />
+    <!-- <PostComponent msg="Welcome to Your Vue.js App"/> -->
+    <Footer />
   </div>
 </template>
 
 <script>
 import PostComponent from './components/PostComponent.vue'
+import HomeComponent from './components/HomeComponent.vue'
+import Header from './components/layouts/Header.vue'
+import Footer from './components/layouts/Footer.vue'
 
 export default {
   name: 'app',
   components: {
-    PostComponent
+    PostComponent,
+    HomeComponent,
+    Header,
+    Footer
   }
 }
 </script>
